@@ -13,7 +13,7 @@ class Movies {
     private var index = 0
     
     // dictionary containing actor, movie pairs
-    let movies = [
+    private let movies = [
         // Personally chosen actors and movie pairs
         "Marlon Brando": "The GodFather",
         "Robert De Niro": "The Deer Hunter",
@@ -27,7 +27,7 @@ class Movies {
     
     // Section 3
     // nextMovie funciton, some code from Homework 1 pdf
-    func nextMovie() -> String{
+    func nextMovie() -> String {
         index += 1
         let sortedMovies = movies.keys.sorted()
         
@@ -37,6 +37,10 @@ class Movies {
         
         let title = sortedMovies[index]
         return title
+    }
+    
+    func getMoviesDict() -> Dictionary<String, String> {
+        return movies
     }
     
 

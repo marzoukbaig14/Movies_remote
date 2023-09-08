@@ -13,8 +13,9 @@ struct ContentView: View {
     private let Header = "Movies"
     private let movie_names = Movies()
     
+    
     // Section 4
-    @State private var title = "test"
+    @State private var title = "Test"
     
     var body: some View {
         
@@ -28,12 +29,23 @@ struct ContentView: View {
             
             // movie name displayed here
             Text(title)
+                .onAppear() {
+                    var key = movie_names.getMoviesDict()
+                    title = key[movie_names.nextMovie()] ?? title
+                }
                 .padding()
                 .font(.custom("", size:26))
             
             // "Next" button
             Button("Next") {
                 
+                // Section 4
+                // getting movie dict since it is private
+                var key = movie_names.getMoviesDict()
+                
+                // setting the title to be the next movie in list
+                // unwrapping optional using Nil-Coalescing Operator
+                title = key[movie_names.nextMovie()] ?? title
             }
             .padding()
             .font(.custom("", size:36))
