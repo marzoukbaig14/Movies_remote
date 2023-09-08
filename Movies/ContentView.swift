@@ -8,21 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
-    // Just checking
-    // Second test commit
+    
+    // static title "Movies"
+    private let title = "Movies"
+    
     var body: some View {
+        
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Test")
+            
+            // "Movies" title
+            Text(title)
+                .padding()
+                .foregroundColor(Color.red)
+                .font(.custom("", size: 50))
+            
+            // movie name displayed here
+            Text("The Godfather")
+                .padding()
+                .font(.custom("", size:26))
+            
+            // "Next" button
+            Button("Next") {
+                
+            }
+            .padding()
+            .font(.custom("", size:36))
+            
         }
-        .padding()
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+        
+        struct ContentView_Previews: PreviewProvider {
+            static var previews: some View {
+                ContentView()
+            }
+        }
