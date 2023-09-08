@@ -10,20 +10,24 @@ import SwiftUI
 struct ContentView: View {
     
     // static title "Movies"
-    private let title = "Movies"
+    private let Header = "Movies"
+    private let movie_names = Movies()
+    
+    // Section 4
+    @State private var title = "test"
     
     var body: some View {
         
         VStack {
             
             // "Movies" title
-            Text(title)
+            Text(Header)
                 .padding()
                 .foregroundColor(Color.red)
                 .font(.custom("", size: 50))
             
             // movie name displayed here
-            Text("The Godfather")
+            Text(title)
                 .padding()
                 .font(.custom("", size:26))
             
