@@ -30,7 +30,7 @@ struct ContentView: View {
             // movie name displayed here
             Text(title)
                 .onAppear() {
-                    var key = movie_names.getMoviesDict()
+                    let key = movie_names.getMoviesDict()
                     title = key[movie_names.nextMovie()] ?? title
                 }
                 .padding()
@@ -41,7 +41,7 @@ struct ContentView: View {
                 
                 // Section 4
                 // getting movie dict since it is private
-                var key = movie_names.getMoviesDict()
+                let key = movie_names.getMoviesDict()
                 
                 // setting the title to be the next movie in list
                 // unwrapping optional using Nil-Coalescing Operator
